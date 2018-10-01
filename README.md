@@ -1,6 +1,6 @@
 # To-Do example
 
-To-do list built using angular 6 and Angular Material. Simple creating list that allows yout to add, edit and remove tasks. Simple filter functions and possibility to create tags to mark down the tasks.
+To-do list built using angular 6 and Angular Material. Simple creation list that allows yout to add, edit and remove tasks. Simple filter functions and possibility to create tags to mark down the tasks.
 
 ## Development server
 
