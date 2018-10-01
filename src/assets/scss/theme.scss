@@ -1,0 +1,64 @@
+
+@import '~assets/scss/_mixins';
+@import '~assets/scss/_variables';
+@import '~@angular/material/theming';
+
+$todo-app-primary:  mat-palette($mat-light-blue, 500);
+$todo-app-accent:   mat-palette($mat-blue-grey, 300);
+$todo-app-warn:     mat-palette($mat-red);
+$todo-app-theme:    mat-light-theme($todo-app-primary, $todo-app-accent, $todo-app-warn);
+
+$custom-typography: mat-typography-config(
+    $font-family: 'Abel, Helvetica Neue, sans-serif'
+);
+
+@include mat-core($custom-typography);
+@include angular-material-typography($custom-typography);
+@include angular-material-theme($todo-app-theme);
+
+// FIELDS
+mat-form-field.mat-form-field {
+    margin: 0;
+    padding: 0 12px;
+    width: 100%;
+    &.full-width{ width: 100%; }
+    &.half-width{ width: 50%; }
+}
+mat-checkbox.mat-checkbox{
+    max-width: 80%;
+    .mat-checkbox-layout{
+        width: 100%;
+        @include display-flex;
+        @include align-items(center);
+    }
+    .mat-checkbox-label{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        line-height: 14px;
+        small{font-size: 12px; color: mat-color($mat-blue-grey, 300);}
+    }
+}
+button.mat-raised-button .mat-button-wrapper{
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+}
+mat-chip.mat-chip{
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    .mat-chip-remove{
+        width: 12px;
+        height: 12px;
+    }
+}
+
+
+// DIALOGS
+mat-dialog-container.mat-dialog-container{
+    @include box-shadow(0px 0px 80px rgba(52,102,107,0.08));
+    @include border-radius(8px);
+}
+.cdk-overlay-dark-backdrop{background-color: rgba(0, 0, 0, 0.2);}

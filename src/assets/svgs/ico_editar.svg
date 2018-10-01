@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="28">
+	<defs>
+		<clipPath id="clip_0">
+			<rect x="-1546" y="-412" width="1920" height="1080" clip-rule="evenodd"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip_0)">
+		<path fill="rgb(80,80,80)" stroke="none" transform="translate(0 3.01718)" d="M20.2499 0C19.9979 0 19.7459 0.098 19.5539 0.293L2.1612 17.96C2.07161 18.051 2.00073 18.158 1.9515 18.276L0.0810016 22.747C-0.208434 23.441 0.321214 24.141 0.981797 24.141C1.10584 24.141 1.23284 24.117 1.36082 24.063L5.81459 22.208C5.93568 22.158 6.04495 22.083 6.13749 21.99L23.5253 4.327C23.9102 3.937 23.9102 3.303 23.5253 2.913L20.946 0.293C20.754 0.098 20.502 0 20.2499 0M20.5693 1L20.5693 1L23.1893 3.62L5.52728 21.283L1.00328 23.138L2.90228 18.667L20.5683 1C20.5683 1 20.5693 1 20.5693 1"/>
+	</g>
+	<defs>
+		<clipPath id="clip_1">
+			<rect x="-1546" y="-412" width="1920" height="1080" clip-rule="evenodd"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip_1)">
+		<path fill="rgb(255,255,255)" stroke="none" transform="translate(22.6724 1.50031)" d="M3.034 3.034L0.981 0.981L0 0"/>
+	</g>
+	<defs>
+		<clipPath id="clip_2">
+			<rect x="-1546" y="-412" width="1920" height="1080" clip-rule="evenodd"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip_2)">
+		<path fill="none" stroke="rgb(80,80,80)" stroke-width="1" stroke-miterlimit="4" transform="translate(22.6724 1.50031)" d="M3.034 3.034L0.981 0.981L0 0"/>
+	</g>
+	<defs>
+		<clipPath id="clip_3">
+			<rect x="-1546" y="-412" width="1920" height="1080" clip-rule="evenodd"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip_3)">
+		<path fill="rgb(255,255,255)" stroke="none" transform="translate(2.51953 21.3922)" d="M3.295 3.295L1.618 1.618L0 0"/>
+	</g>
+	<defs>
+		<clipPath id="clip_4">
+			<rect x="-1546" y="-412" width="1920" height="1080" clip-rule="evenodd"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip_4)">
+		<path fill="none" stroke="rgb(80,80,80)" stroke-width="1" stroke-miterlimit="4" transform="translate(2.51953 21.3922)" d="M3.295 3.295L1.618 1.618L0 0"/>
+	</g>
+</svg>

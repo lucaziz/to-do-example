@@ -1,0 +1,14 @@
+@import '~assets/scss/_loads';
+
+.dialog-form{
+    padding: 16px 0 0;
+    width: 420px;
+    @include display-flex;
+    @include flex-flow(row wrap);
+}
+.row-bt{
+    padding: 12px;
+    width: 100%;
+    @include display-flex;
+    @include justify-content(space-between);
+}

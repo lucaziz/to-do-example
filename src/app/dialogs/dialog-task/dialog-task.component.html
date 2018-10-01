@@ -1,0 +1,58 @@
+<form class="dialog-form" [formGroup]="form" (submit)="onSubmit(opp)" novalidate>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Task title" formControlName="title" autocomplete="off" required>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+        <input matInput [matDatepicker]="picker" placeholder="Task date" formControlName="date" readonly required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+        <input matInput placeholder="Task time" formControlName="time" autocomplete="off" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+        <input matInput placeholder="Duration of Task" formControlName="duration" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+        <input matInput placeholder="Reminder time" formControlName="reminder" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-chip-list #chipList>
+            <mat-chip
+                *ngFor="let tag of tags"
+                (removed)="removeTag(tag)">
+                {{tag}}
+                <a matChipRemove><img src="assets/svgs/ico_close.svg" /></a>
+            </mat-chip>
+            <input
+                placeholder="Tags"
+                #tagsInput
+                [formControl]="tagsCtrl"
+                [matAutocomplete]="auto"
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="addTag($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+            {{tag}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+    <div class="row-bt">
+        <a mat-raised-button (click)="dialogRef.close()">Cancel</a>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid || loading">
+            <span *ngIf="!loading">{{(opp == 'edit' ? 'Save' : 'Confirm')}}</span>
+            <mat-spinner *ngIf="loading" [strokeWidth]="3" [diameter]="25"></mat-spinner>
+        </button>
+    </div>
+</form>

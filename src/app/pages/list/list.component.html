@@ -1,0 +1,43 @@
+
+<section class="box-tasks">
+  <div class="filters" *ngIf="listTasks?.length > 0">
+      <div class="filters-header">Search for tasks by:</div>
+      <div class="filters-content">
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Title, description or tags" [(ngModel)]="filters.typing" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select placeholder="Status" [(ngModel)]="filters.status">
+              <mat-option>Select...</mat-option>
+              <mat-option [value]="false">Open Task</mat-option>
+              <mat-option [value]="true">Task done</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select placeholder="Period" [(ngModel)]="filters.period">
+              <mat-option [value]="'day'">Today</mat-option>
+              <mat-option [value]="'week'">Week</mat-option>
+              <mat-option [value]="'month'">Month</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  </div>
+  <button mat-raised-button color="primary" (click)="openDialog()">Add new task</button>
+  <div *ngIf="loading" class="loading-content"><mat-spinner [strokeWidth]="3" [diameter]="25"></mat-spinner></div>
+  <ul class="task-list" *ngIf="listTasks?.length > 0">
+    <li *ngFor="let task of listTasks | filter: filters.typing:filters.status:filters.period" [class.completed]="task.complete">
+      <div class="task-list-content">
+        <mat-checkbox  [(ngModel)]="task.complete" (change)="toggleComplete(task, $event)">{{task.title}} <span *ngIf="filters.period != 'day'">({{task.date | date}})</span><br><small *ngIf="task.tags?.length > 0">{{task.tags}}</small></mat-checkbox>
+        <div class="task-list-content-actions">
+          <a (click)="editTask(task)"><img src="assets/svgs/ico_editar.svg" alt="Edit" /></a>
+          <a (click)="removeTask(task.id)"><img src="assets/svgs/ico_excluir.svg" alt="Remove" /></a>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div *ngIf="listTasks?.length <= 0" class="empty-content"><img src="assets/svgs/ico_empty.svg" alt="No tasks"/></div>
+</section>
